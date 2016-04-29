@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+<%= form_for(@course) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div style="text-align: center">
+
+  <div  class="form-horizontal">
+    <%= f.label :nome %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div  class="form-horizontal">
+    <%= f.label :descrição %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div  class="form-horizontal">
+    <%= f.label :status %><br>
+     <td><%= f.check_box :status %>Ativo</td>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>
+<% end %>

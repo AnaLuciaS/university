@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<div style="text-align: center">
+<p>
+  <strong>Nome:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Matrícula:</strong>
+  <%= @student.register_number %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @student.status %>
+</p>
+
+<%= link_to 'Editar', edit_student_path(@student) %> |
+<%= link_to 'Voltar', students_path %>
+</div>
