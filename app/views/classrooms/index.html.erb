@@ -17,6 +17,7 @@
 
   <tbody>
     <% @classrooms.each do |classroom| %>
+    
       <tr>
         <td><%= classroom.student_id %></td>
         <td><%= classroom.courses_id %></td>
@@ -31,4 +32,5 @@
 </fieldset>
 <br>
 
-<%= link_to 'Nova Matrícula', new_classroom_path %>
+<%= link_to 'Nova Matrícula', new_classroom_path %><br>
+<%= link_to 'Página Inicial', 'http://localhost:3000/' %>

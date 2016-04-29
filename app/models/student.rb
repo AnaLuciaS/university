@@ -1,3 +1,3 @@
 class Student < ActiveRecord::Base
-	has_many :classroom
+	belongs_to :classroom
 end

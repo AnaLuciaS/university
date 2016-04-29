@@ -1,5 +1,15 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+<script type="text/javascript" language="javascript">
+function valida_form (){
+if(document.getElementById("nome").value.length < 3){
+alert('Por favor, preencha o campo nome');
+document.getElementById("nome").focus();
+return false
+}
+}
+</script>
+
 <%= form_for(@student) do |f| %>
   <% if @student.errors.any? %>
     <div id="error_explanation">
@@ -16,9 +26,10 @@
   
 <div style="text-align: center">
 
+<form id="form1" name="form1" method="post" action="#" onsubmit="return valida_form(this)">
 
-  <div  class="form-horizontal">
-    <%= f.label :nome %><br>
+  <div  class="form-horizontal" id='nome'>
+    <%= f.label :nome %>
     <%= f.text_field :name %>
   </div>
   <div class="form-horizontal">
@@ -35,4 +46,6 @@
   </div>
 
 </div>
+</form>
 <% end %>
+
